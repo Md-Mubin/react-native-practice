@@ -3,15 +3,11 @@ import React from 'react'
 import { StatusBar, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-type Props = {}
-
-export default function _layout({ }: Props) {
+export default function _layout() {
   return (
-    <View>
+    <SafeAreaView>
       <StatusBar barStyle={"dark-content"} backgroundColor={"#fff"} />
-      <SafeAreaView>
-        <Slot />
-      </SafeAreaView>
-    </View>
+      <Slot />
+    </SafeAreaView>
   )
 }
