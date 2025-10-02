@@ -13,6 +13,7 @@ export default function CommonInput({ placeholder, onChangeText, value, style, .
     <TextInput
       style={[styles.inputStyle, style]}
       placeholder={placeholder}
+      placeholderTextColor={"#00000088"}
       onChangeText={onChangeText}
       value={value}
       {...others} />
@@ -21,12 +22,12 @@ export default function CommonInput({ placeholder, onChangeText, value, style, .
 
 const styles = StyleSheet.create({
   inputStyle: {
-    width: 'auto',
+    flex : 1,
     padding: 8,
-    borderColor: "#00000099",
-    borderRadius: 10,
-    outline: "none",
+    borderWidth : 2,
+    borderColor: "#00000055",
+    borderRadius: 5,
     fontSize: 20,
-    fontWeight: 400,
+    fontWeight: "400"
   }
 })
