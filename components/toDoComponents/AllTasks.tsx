@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text } from 'react-native';
 
 type Props = {
   allTasks?: any;
@@ -7,15 +7,16 @@ type Props = {
 
 export default function AllTasks({ allTasks }: Props) {
   return (
-      <FlatList
-        data={allTasks}
-        keyExtractor={(item, i) => i.toString()}
-        renderItem={({ item }) => (
-          <Text style={styles.allTasksStyles}>
-            {item}
-          </Text>
-        )}
-        contentContainerStyle={styles.allTasksBody} />  )
+    <FlatList
+      data={allTasks}
+      keyExtractor={(item, i) => i.toString()}
+      renderItem={({ item }) => (
+        <Text style={styles.allTasksStyles}>
+          {item}
+        </Text>
+      )}
+      contentContainerStyle={styles.allTasksBody} />
+  )
 }
 
 const styles = StyleSheet.create({

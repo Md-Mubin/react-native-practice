@@ -5,10 +5,9 @@ import { View } from 'react-native'
 export default function HomePage() {
 
     const [allTasks, setAllTasks] = useState([])
-    console.log(allTasks)
 
     return (
-        <View>
+        <View >
             <AddTask setAllTasks={setAllTasks} />
             <AllTasks allTasks={allTasks} />
         </View>
