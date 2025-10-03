@@ -5,7 +5,7 @@ import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteTask, editTaskSave, setTask } from '@/store/Slices/TaskSlice';
 import { loadTasksFromStorage } from '@/utils/storage';
-import Animated, { BounceInLeft, LightSpeedInLeft, LightSpeedInRight, LightSpeedOutRight } from 'react-native-reanimated'
+import Animated, { BounceIn, BounceInLeft, BounceOut, Layout, LightSpeedInLeft, LightSpeedInRight, LightSpeedOutRight } from 'react-native-reanimated'
 
 export default function AllTasks() {
 
@@ -49,21 +49,29 @@ export default function AllTasks() {
 
   return (
     <View style={{ flex: 1 }}>
-      {
-        allTaskArray && allTaskArray.length > 0 && (
-          <CommonHeader headerName='Your Tasks' extraStyle={{ marginBottom: 20, paddingTop: 20 }} />
-        )
-      }
+      <View style={{ height: 80 }}>
+        {
+          allTaskArray && allTaskArray.length > 0 && (
+            <Animated.View
+              entering={BounceIn.duration(300).delay(200)}
+              exiting={BounceOut.duration(300).delay(400)}>
+              <CommonHeader headerName='Your Tasks' extraStyle={{ marginBottom: 20, paddingTop: 20 }} />
+            </Animated.View>
+          )
+        }
+      </View>
 
       <View style={{ flex: 1 }}>
         <FlatList
           data={allTaskArray}
+          removeClippedSubviews={false}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <Animated.View 
-            entering={BounceInLeft.duration(500)}
-            exiting={LightSpeedOutRight.duration(500)}
-            style={styles.allTasksStyles}>
+            <Animated.View
+              entering={BounceInLeft.duration(500)}
+              exiting={LightSpeedOutRight.duration(500)}
+              layout={Layout.springify()}
+              style={styles.allTasksStyles}>
 
               {/* input for edit tasks */}
               <CommonInput
