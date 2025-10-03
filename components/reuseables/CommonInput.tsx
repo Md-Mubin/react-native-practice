@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, TextInput } from 'react-native'
 
 type inputProps = {
-  placeholder: string;
+  placeholder?: string;
   value: any;
   onChangeText?: any;
   style?: any
@@ -22,9 +22,9 @@ export default function CommonInput({ placeholder, onChangeText, value, style, .
 
 const styles = StyleSheet.create({
   inputStyle: {
-    flex : 1,
+    flex: 1,
     padding: 8,
-    borderWidth : 2,
+    borderWidth: 2,
     borderColor: "#00000055",
     borderRadius: 5,
     fontSize: 20,

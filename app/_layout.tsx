@@ -1,16 +1,19 @@
+import { store } from '@/store'
 import { Stack } from 'expo-router'
-import React from 'react'
 import { View } from 'react-native'
+import { Provider } from 'react-redux'
 
 export default function RootLayout() {
     return (
-        <View style={{ flex: 1 }}>
-            <Stack
-                screenOptions={{
-                    headerShown: false,
-                }}
-                initialRouteName="(main)"
-            />
-        </View>
+        <Provider store={store} >
+            <View style={{ flex: 1 }}>
+                <Stack
+                    screenOptions={{
+                        headerShown: false,
+                    }}
+                    initialRouteName="(main)"
+                />
+            </View>
+        </Provider>
     )
 }

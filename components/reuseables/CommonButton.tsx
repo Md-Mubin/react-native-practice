@@ -1,5 +1,4 @@
-import React from 'react'
-import { Button, Pressable, StyleSheet, Text } from 'react-native'
+import { Pressable, StyleSheet, Text } from 'react-native'
 
 type btnProps = {
   btnName: any;
@@ -8,8 +7,10 @@ type btnProps = {
 }
 
 export default function CommonButton({ btnName, onPress, styles }: btnProps) {
+
   return (
     <Pressable
+      android_ripple={{ color: "#000000" }}
       onPress={onPress}
       style={[commonButtonStyle.button, styles]}>
       <Text style={commonButtonStyle.buttonText}>
@@ -30,7 +31,6 @@ const commonButtonStyle = StyleSheet.create({
 
   buttonText: {
     fontSize: 20,
-    color : "#fff",
+    color: "#fff",
   }
-
 })

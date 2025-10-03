@@ -7,7 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 export default function _layout() {
     return (
         <SafeAreaView style={{flex : 1}}>
-            <StatusBar barStyle={"light-content"} backgroundColor={"#00000066"} />
+            <StatusBar barStyle={"light-content"} backgroundColor={"#919191"} />
 
             {/* navbar */}
             <Navbar />

@@ -1,19 +1,18 @@
-import { Link } from 'expo-router'
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-type Props = {}
-
-export default function Navbar({ }: Props) {
+export default function Navbar() {
     return (
         <View style={navbarStyles.navbody}>
             <Text style={navbarStyles.navLogo}>
                 Your Tasks
             </Text>
 
-            <Link href={'./login'} style={navbarStyles.navLogin}>
-                Login
-            </Link>
+            <Text
+                //  href={'./login'} 
+                style={navbarStyles.navLogin}>
+                More Comming Soon...
+            </Text>
         </View>
     )
 }
@@ -24,7 +23,7 @@ const navbarStyles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        backgroundColor: "#00000066",
+        backgroundColor: "#919191",
         padding: 20
     },
 
@@ -35,7 +34,7 @@ const navbarStyles = StyleSheet.create({
     },
 
     navLogin: {
-        fontSize: 20,
+        fontSize: 10,
         fontWeight: 600,
         color: "#fff",
     }

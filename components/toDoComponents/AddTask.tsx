@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
-import { StyleSheet,  Text,  View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { CommonButton, CommonHeader, CommonInput } from '../reuseables'
+import { useDispatch } from 'react-redux';
+import { addTasks } from '@/store/Slices/TaskSlice';
 
-type Props = {
-  setAllTasks?: any;
-}
+export default function AddTask() {
 
-export default function AddTask({ setAllTasks }: Props) {
+  const [task, setTask] = useState('')
 
-  const [addTask, setAddTask] = useState('')
+  const dispatch = useDispatch()
 
   const handleAddTask = () => {
-    if (addTask.trim() === "") return
-    setAllTasks((prev: any) => [...prev, addTask])
-    setAddTask("")
+    if (task.trim() === "") return
+    dispatch(addTasks(task))
+    setTask("")
   }
 
   return (
@@ -25,8 +25,8 @@ export default function AddTask({ setAllTasks }: Props) {
 
         <CommonInput
           placeholder='. . . Your Task'
-          value={addTask}
-          onChangeText={(task: any) => setAddTask(task)}
+          value={task}
+          onChangeText={(task: any) => setTask(task)}
         />
 
         <CommonButton
@@ -40,7 +40,9 @@ export default function AddTask({ setAllTasks }: Props) {
 const addTaskStyles = StyleSheet.create({
 
   addTaskBody: {
-    paddingVertical: 20
+    paddingVertical: 20,
+    borderBottomWidth: 2,
+    borderBottomColor: "#919191"
   },
 
   inputArea: {
