@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "react-native-to-do-list",
-    "slug": "react-native-to-do-list",
+    "name": "My Todo App",
+    "slug": "my-todo-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "",
+    "icon": "./assets/todoApp.png",
     "scheme": "reactnattivetodolist",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,8 +13,10 @@
     },
     "android": {
       "adaptiveIcon": {
+        "foregroundImage": "./assets/todoApp.png",
         "backgroundColor": "#FFFFFF"
       },
+      "package": "com.mubin.todoApp",
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
@@ -27,7 +29,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/todoApp.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff",
@@ -40,6 +42,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "34357904-c7b5-45de-bb99-8a55007e212f"
+      }
     }
   }
 }
