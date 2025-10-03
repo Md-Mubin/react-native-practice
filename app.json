@@ -17,7 +17,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.mubin.todoApp",
-      "edgeToEdgeEnabled": true,
+      "edgeToEdgeEnabled": false,
       "predictiveBackGestureEnabled": false
     },
     "web": {
@@ -48,6 +48,12 @@
       "eas": {
         "projectId": "34357904-c7b5-45de-bb99-8a55007e212f"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/34357904-c7b5-45de-bb99-8a55007e212f"
     }
   }
 }

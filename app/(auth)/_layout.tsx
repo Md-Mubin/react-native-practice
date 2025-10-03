@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 export default function _layout() {
   return (
     <SafeAreaView>
-      <StatusBar barStyle={"dark-content"} backgroundColor={"#fff"} />
+      {/* <StatusBar barStyle={"dark-content"} backgroundColor={"#fff"} /> */}
       <Slot />
     </SafeAreaView>
   )
